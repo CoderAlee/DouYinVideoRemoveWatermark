@@ -1,0 +1,36 @@
+apply from: "/builder/dependent-version.gradle"
+ext {
+    android = [
+            compileSdkVersion = android_version['compile'],
+            applicationId = "org.alee.util.douyin",
+            minSdkVersion = android_version['min'],
+            targetSdkVersion = android_version['compile'],
+            versionCode = LOCAL_VERSION_CODE as Integer,
+            versionName = LOCAL_VERSION_NAME,
+            buildToolsVersion = android_version['build_tool'],
+    ]
+
+    Official_Library = [
+            appcompat: "androidx.appcompat:appcompat:${official_library_version['appcompatX']}",
+    ]
+
+
+    Tripartite_Library = [
+            jsoup             : "org.jsoup:jsoup:1.13.1",
+            qmui              : "com.qmuiteam:qmui:2.0.0-alpha10",
+            dkplayer          : 'com.github.dueeeke.dkplayer:dkplayer-java:3.2.6',
+            dkplayer_ui       : 'com.github.dueeeke.dkplayer:dkplayer-ui:3.2.6',
+            rx                : "io.reactivex.rxjava2:rxjava:2.0.7",
+            rxA               : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            rxAdapter         : "com.squareup.retrofit2:adapter-rxjava2:2.2.0",
+            converter_gson    : "com.squareup.retrofit2:converter-gson:2.1.0",
+            okhttp            : "com.squareup.okhttp3:okhttp:3.5.0",
+            okhttp_interceptor: "com.squareup.okhttp3:logging-interceptor:3.6.0",
+            fastjson          : "com.alibaba:fastjson:1.2.48",
+            retrofit          : "com.squareup.retrofit2:retrofit:2.1.0",
+            gson              : "com.google.code.gson:gson:2.8.5",
+            lombok            : "org.projectlombok:lombok:1.18.12",
+
+    ]
+
+}

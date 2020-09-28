@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-aspectjx'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+        ignoreWarnings true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            buildConfigField "String", "LOG_TAG", LOG_TAG.toString()
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "String", "LOG_TAG", LOG_TAG.toString()
+        }
+    }
+    repositories {
+        flatDir {
+            dir "libs"
+        }
+    }
+}
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+dependencies {
+    implementation rootProject.ext.Official_Library["appcompat"]
+    implementation rootProject.ext.Tripartite_Library["qmui"]
+    implementation rootProject.ext.Tripartite_Library["dkplayer"]
+    implementation rootProject.ext.Tripartite_Library["dkplayer_ui"]
+    implementation rootProject.ext.Tripartite_Library["rx"]
+    implementation rootProject.ext.Tripartite_Library["rxA"]
+    implementation files('libs\\annotation-v7-1.15.0.jar')
+    implementation(name: 'core-v7-1.15.0', ext: 'aar')
+    implementation(name: 'Repeated-Click-1.1.0', ext: 'aar')
+
+    implementation project(path: ':Provider')
+}

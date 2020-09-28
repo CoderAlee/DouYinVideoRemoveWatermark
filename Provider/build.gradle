@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+
+dependencies {
+    annotationProcessor rootProject.ext.Tripartite_Library["lombok"]
+    compileOnly rootProject.ext.Tripartite_Library["lombok"]
+    implementation rootProject.ext.Tripartite_Library["rx"]
+    implementation rootProject.ext.Tripartite_Library["rxA"]
+    implementation rootProject.ext.Tripartite_Library["rxAdapter"]
+    implementation rootProject.ext.Tripartite_Library["converter_gson"]
+    implementation rootProject.ext.Tripartite_Library["okhttp"]
+    implementation rootProject.ext.Tripartite_Library["okhttp_interceptor"]
+    implementation rootProject.ext.Tripartite_Library["retrofit"]
+    implementation rootProject.ext.Tripartite_Library["gson"]
+}

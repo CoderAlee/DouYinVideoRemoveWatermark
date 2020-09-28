@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.layout.QMUIRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.qmuiteam.qmui.layout.QMUILinearLayout
+        android:id="@+id/lly_control"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <EditText
+            android:id="@+id/input_content"
+            style="@style/QMUI.Dialog.EditContent"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="9"
+            android:paddingStart="10dp"
+            android:background="@android:color/transparent"
+            android:paddingEnd="10dp" />
+
+        <com.qmuiteam.qmui.alpha.QMUIAlphaButton
+            android:id="@+id/btn_preview"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+    </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+    <com.dueeeke.videoplayer.player.VideoView
+        android:id="@+id/vv_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lly_control"
+        android:layout_marginTop="10dp" />
+</com.qmuiteam.qmui.layout.QMUIRelativeLayout>
