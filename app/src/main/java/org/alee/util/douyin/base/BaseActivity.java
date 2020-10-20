@@ -1,10 +1,10 @@
 package org.alee.util.douyin.base;
 
-import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Window;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
@@ -18,7 +18,7 @@ import org.alee.util.douyin.R;
  * @description: xxxx
  *
  *********************************************************/
-public abstract class BaseActivity extends FragmentActivity {
+public abstract class BaseActivity extends AppCompatActivity {
     /**
      * 上下文
      */
@@ -26,7 +26,7 @@ public abstract class BaseActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        QMUIStatusBarHelper.translucent(this,getResources().getColor(R.color.colorAccent));
+        QMUIStatusBarHelper.translucent(this,getResources().getColor(R.color.colorPrimary));
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         mContext = BaseActivity.this;

@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">DouYinVideoRemoveWatermark</string>
+    <string name="app_name">趣享</string>
+    <string name="main_navigation_item_message">消息</string>
+    <string name="main_navigation_item_downloaded_video">视频</string>
+    <string name="main_navigation_item_downloaded_music">BGM</string>
+    <string name="main_fragment_open">open</string>
+    <string name="main_fragment_close">close</string>
 </resources>

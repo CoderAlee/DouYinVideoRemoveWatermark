@@ -1,9 +1,10 @@
-package org.alee.util.douyin;
+package org.alee.util.douyin.main;
 
 import org.alee.dokodemo.door.annotation.Node;
 import org.alee.dokodemo.door.core.DokodemoDoor;
+import org.alee.util.douyin.R;
 import org.alee.util.douyin.base.BaseActivity;
-import org.alee.util.douyin.fragment.MainFragment;
+import org.alee.util.douyin.main.MainFragment;
 
 @Node(containerViewId = R.id.fragment_container, stickyStack = true)
 public class MainActivity extends BaseActivity {

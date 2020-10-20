@@ -1,40 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.qmuiteam.qmui.layout.QMUIRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.qmuiteam.qmui.layout.QMUILinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?attr/colorPrimary"
+    android:orientation="vertical">
 
-    <com.qmuiteam.qmui.layout.QMUILinearLayout
-        android:id="@+id/lly_control"
+    <com.qmuiteam.qmui.layout.QMUIRelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        android:background="?attr/colorPrimary"
         android:paddingStart="15dp"
         android:paddingEnd="15dp">
 
-        <EditText
-            android:id="@+id/input_content"
-            style="@style/QMUI.Dialog.EditContent"
-            android:layout_width="0dp"
+        <com.qmuiteam.qmui.alpha.QMUIAlphaTextView
+            android:id="@+id/tv_link"
+            style="@style/TextThem"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:layout_weight="9"
-            android:paddingStart="10dp"
-            android:background="@android:color/transparent"
-            android:paddingEnd="10dp" />
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:marqueeRepeatLimit="-1"
+            android:singleLine="true" />
+    </com.qmuiteam.qmui.layout.QMUIRelativeLayout>
 
-        <com.qmuiteam.qmui.alpha.QMUIAlphaButton
-            android:id="@+id/btn_preview"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_weight="1" />
-    </com.qmuiteam.qmui.layout.QMUILinearLayout>
-
-    <com.dueeeke.videoplayer.player.VideoView
-        android:id="@+id/vv_player"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/content_root"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/lly_control"
-        android:layout_marginTop="10dp" />
-</com.qmuiteam.qmui.layout.QMUIRelativeLayout>
+        android:layout_height="0dp"
+        android:layout_weight="80">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_container"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="match_parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fbtn_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="30dp"
+                android:src="@mipmap/icon_more"
+                app:backgroundTint="?attr/colorPrimary"
+                app:elevation="5dp"
+                app:fabSize="mini"
+                app:rippleColor="@color/c8">
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nv_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="?attr/colorPrimary"
+            app:headerLayout="@layout/layout_main_navigation_header"
+            app:itemBackground="@drawable/bg_navigation_item"
+            app:itemIconTint="@color/c8"
+            app:menu="@menu/main_navigation"
+            app:itemTextColor="@color/text_state_navigation_item" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+        <com.qmuiteam.qmui.alpha.QMUIAlphaRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tl_root"
+                style="@style/TabLayout"
+                android:background="@color/transparent"
+                app:tabIndicatorColor="@color/orange"
+                app:tabSelectedTextColor="@color/gray333"
+                app:tabTextColor="@color/white" />
+        </com.qmuiteam.qmui.alpha.QMUIAlphaRelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+</com.qmuiteam.qmui.layout.QMUILinearLayout>

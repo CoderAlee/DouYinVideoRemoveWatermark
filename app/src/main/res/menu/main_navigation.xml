@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".main.MainActivity">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/item_message"
+            android:icon="@mipmap/icon_message"
+            android:title="@string/main_navigation_item_message"/>
+        <item
+            android:id="@+id/item_downloaded_video"
+            android:icon="@mipmap/icon_downloaded_video"
+            android:title="@string/main_navigation_item_downloaded_video"/>
+        <item
+            android:id="@+id/item_downloaded_music"
+            android:icon="@mipmap/icon_downloaded_music"
+            android:title="@string/main_navigation_item_downloaded_music"/>
+    </group>
+</menu>

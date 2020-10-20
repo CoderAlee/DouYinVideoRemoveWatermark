@@ -50,8 +50,8 @@ dependencies {
     implementation rootProject.ext.Tripartite_Library["rx"]
     implementation rootProject.ext.Tripartite_Library["rxA"]
     implementation files('libs\\annotation-v7-1.15.0.jar')
-    implementation(name: 'core-v7-1.15.0', ext: 'aar')
-    implementation(name: 'Repeated-Click-1.1.0', ext: 'aar')
+    implementation(name: 'core-x-1.15.0', ext: 'aar')
+//    implementation(name: 'Repeated-Click-1.1.0', ext: 'aar')
 
-    implementation project(path: ':Provider')
+//    implementation project(path: ':Provider')
 }

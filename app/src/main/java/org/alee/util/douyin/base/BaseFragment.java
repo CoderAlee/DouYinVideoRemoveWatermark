@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import org.alee.compinent.remover.annotation.RepeatedClick;
 import org.alee.dokodemo.door.annotation.Node;
 
 /**********************************************************
@@ -21,7 +20,7 @@ import org.alee.dokodemo.door.annotation.Node;
  *
  *********************************************************/
 @Node
-public abstract class BaseFragment extends Fragment implements View.OnClickListener {
+public abstract class BaseFragment extends BaseNodeFragment implements View.OnClickListener {
     /**
      * 根布局
      */
@@ -84,7 +83,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
      */
     protected abstract void initData();
 
-    @RepeatedClick
+//    @RepeatedClick
     @Override
     public final void onClick(View view) {
         processClick(view);

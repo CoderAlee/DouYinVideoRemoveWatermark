@@ -1,3 +1,3 @@
-include ':Provider'
+//include ':Provider'
 include ':app'
 rootProject.name = "DouYinVideoRemoveWatermark"

@@ -1,6 +1,8 @@
 package org.alee.provider.net.douyin;
 
 
+import org.alee.provider.net.douyin.bean.BeanDouYin;
+
 /**********************************************************
  *
  * @author: MingYu.Liu
@@ -14,7 +16,7 @@ public interface IRequestListener {
      *
      * @param data       数据
      */
-    void onSuccess(BeanVideoInfo data);
+    void onSuccess(BeanDouYin data);
 
     /**
      * 状态吗错误的回调

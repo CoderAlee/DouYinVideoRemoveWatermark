@@ -1,7 +1,8 @@
 package org.alee.provider.net.douyin;
 
-import org.alee.provider.net.douyin.bean.BeanVideoInfo;
+import org.alee.provider.net.douyin.bean.BeanDouYin;
 
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 
 /**********************************************************
@@ -18,5 +19,5 @@ interface DouYinApi {
      * @return 结果
      */
     @GET("web/api/v2/aweme/iteminfo/")
-    Observable<BeanVideoInfo> getRecommendList(String videoId);
+    Observable<BeanDouYin> getRecommendList(String videoId);
 }
