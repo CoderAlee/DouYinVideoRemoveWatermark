@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:color="@color/c8" android:state_checked="true"></item> <!-- selected颜色 -->
-    <item android:color="@color/c8" android:state_pressed="true" /> <!-- pressed颜色 -->
-    <item android:color="@color/c8" android:state_focused="true" /> <!-- focused颜色 -->
-    <item android:color="@color/eaef" /> <!-- default颜色 -->
+    <item android:color="@color/colorAccent" android:state_checked="true"></item> <!-- selected颜色 -->
+    <item android:color="@color/colorAccent" android:state_pressed="true" /> <!-- pressed颜色 -->
+    <item android:color="@color/colorAccent" android:state_focused="true" /> <!-- focused颜色 -->
+    <item android:color="@color/text_color" /> <!-- default颜色 -->
 </selector>

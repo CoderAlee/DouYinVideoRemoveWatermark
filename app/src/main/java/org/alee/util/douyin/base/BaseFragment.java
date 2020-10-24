@@ -8,8 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 
+import org.alee.compinent.remover.annotation.RepeatedClick;
 import org.alee.dokodemo.door.annotation.Node;
 
 /**********************************************************
@@ -83,7 +83,7 @@ public abstract class BaseFragment extends BaseNodeFragment implements View.OnCl
      */
     protected abstract void initData();
 
-//    @RepeatedClick
+    @RepeatedClick
     @Override
     public final void onClick(View view) {
         processClick(view);

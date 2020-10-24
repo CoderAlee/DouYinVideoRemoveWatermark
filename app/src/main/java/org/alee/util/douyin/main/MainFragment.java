@@ -1,6 +1,8 @@
 package org.alee.util.douyin.main;
 
-import androidx.annotation.NonNull;
+import android.util.Log;
+import android.view.View;
+
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -14,7 +16,6 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.qmuiteam.qmui.alpha.QMUIAlphaTextView;
 
-import org.alee.dokodemo.door.annotation.Node;
 import org.alee.util.douyin.R;
 import org.alee.util.douyin.base.BaseFragment;
 import org.alee.util.douyin.main.adapter.ViewPagerAdapter;
@@ -69,7 +70,7 @@ public final class MainFragment extends BaseFragment {
 
     @Override
     protected void getViews() {
-        mTitleTv = findView(R.id.tv_link);
+        //        mTitleTv = findView(R.id.tv_link);
         mDrawerLayout = findView(R.id.content_root);
         mContainerLayout = findView(R.id.vp_container);
         mMoreBtn = findView(R.id.fbtn_more);
@@ -91,17 +92,23 @@ public final class MainFragment extends BaseFragment {
         mContainerLayout.setAdapter(mPagerAdapter);
         mPagerAdapter.addItem("预览", new PreviewFragment());
         mPagerAdapter.addItem("去水印", new PreviewFragment());
-        mPagerAdapter.addItem("剥离BGM", new PreviewFragment());
-        mPagerAdapter.addItem("文案", new PreviewFragment());
-        new TabLayoutMediator(mLabelLayout, mContainerLayout, new TabLayoutMediator.TabConfigurationStrategy() {
-            @Override
-            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                tab.setText(mPagerAdapter.getTitle(position)).setIcon(getResources().getDrawable(R.mipmap.icon_launcher));
-            }
-        }).attach();
-        mPagerAdapter.notifyDataSetChanged();
-        mTitleTv.setText("123213123123123123123");
+        mPagerAdapter.addItem("BGM", new PreviewFragment());
+        new TabLayoutMediator(mLabelLayout, mContainerLayout, (tab, position) -> tab.setText(mPagerAdapter.getTitle(position))).attach();
+    }
 
+
+    private void bindDrawer() {
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                getActivity(), mDrawerLayout, mToolbar, R.string.main_fragment_open, R.string.main_fragment_close);
+        mDrawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {
+                super.onDrawerSlide(drawerView, slideOffset);
+                mLabelLayout.setAlpha(1F - slideOffset);
+            }
+        });
+        mDrawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
     }
 
     /**
@@ -117,13 +124,6 @@ public final class MainFragment extends BaseFragment {
                 navigationMenuView.setVerticalScrollBarEnabled(false);
             }
         }
-    }
-
-    private void bindDrawer() {
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                getActivity(), mDrawerLayout, mToolbar, R.string.main_fragment_open, R.string.main_fragment_close);
-        mDrawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
     }
 
     @Override

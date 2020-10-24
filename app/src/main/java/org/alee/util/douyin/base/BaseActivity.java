@@ -1,11 +1,12 @@
 package org.alee.util.douyin.base;
 
 import android.content.Context;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Window;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
 
 import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 
@@ -26,7 +27,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        QMUIStatusBarHelper.translucent(this,getResources().getColor(R.color.colorPrimary));
+        QMUIStatusBarHelper.translucent(this, getResources().getColor(R.color.colorPrimary));
+        if (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT != getResources().getConfiguration().orientation) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         mContext = BaseActivity.this;

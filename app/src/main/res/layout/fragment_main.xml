@@ -1,35 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.qmuiteam.qmui.layout.QMUILinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.qmuiteam.qmui.layout.QMUIRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="?attr/colorPrimary"
-    android:orientation="vertical">
-
-    <com.qmuiteam.qmui.layout.QMUIRelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
-        android:background="?attr/colorPrimary"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp">
-
-        <com.qmuiteam.qmui.alpha.QMUIAlphaTextView
-            android:id="@+id/tv_link"
-            style="@style/TextThem"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:ellipsize="marquee"
-            android:focusable="true"
-            android:marqueeRepeatLimit="-1"
-            android:singleLine="true" />
-    </com.qmuiteam.qmui.layout.QMUIRelativeLayout>
+    android:layout_height="match_parent">
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/content_root"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="80">
+        android:layout_height="match_parent">
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
@@ -38,8 +16,8 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/vp_container"
                 android:layout_width="match_parent"
-                android:orientation="horizontal"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fbtn_more"
@@ -52,7 +30,7 @@
                 app:backgroundTint="?attr/colorPrimary"
                 app:elevation="5dp"
                 app:fabSize="mini"
-                app:rippleColor="@color/c8">
+                app:rippleColor="?attr/colorPrimaryDark">
 
             </com.google.android.material.floatingactionbutton.FloatingActionButton>
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
@@ -65,30 +43,35 @@
             android:background="?attr/colorPrimary"
             app:headerLayout="@layout/layout_main_navigation_header"
             app:itemBackground="@drawable/bg_navigation_item"
-            app:itemIconTint="@color/c8"
-            app:menu="@menu/main_navigation"
-            app:itemTextColor="@color/text_state_navigation_item" />
+            app:itemIconTint="?attr/colorAccent"
+            app:itemTextColor="@color/text_state_navigation_item"
+            app:menu="@menu/main_navigation" />
     </androidx.drawerlayout.widget.DrawerLayout>
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tool_bar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_marginTop="27dp"
+        android:layout_height="60dp"
+        android:background="@color/transparent"
         app:theme="@style/ThemeOverlay.AppCompat.Dark">
 
         <com.qmuiteam.qmui.alpha.QMUIAlphaRelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="80dp"
+            android:background="@color/transparent">
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tl_root"
                 style="@style/TabLayout"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
                 android:background="@color/transparent"
-                app:tabIndicatorColor="@color/orange"
-                app:tabSelectedTextColor="@color/gray333"
-                app:tabTextColor="@color/white" />
+                app:tabIndicatorColor="@color/white"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="?attr/android:textColorSecondary" />
         </com.qmuiteam.qmui.alpha.QMUIAlphaRelativeLayout>
     </androidx.appcompat.widget.Toolbar>
-
-</com.qmuiteam.qmui.layout.QMUILinearLayout>
+</com.qmuiteam.qmui.layout.QMUIRelativeLayout>
