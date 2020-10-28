@@ -1,6 +1,5 @@
 package org.alee.util.douyin.main;
 
-import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -18,8 +17,10 @@ import com.qmuiteam.qmui.alpha.QMUIAlphaTextView;
 
 import org.alee.util.douyin.R;
 import org.alee.util.douyin.base.BaseFragment;
+import org.alee.util.douyin.bgm.BackgroundMusicFragment;
 import org.alee.util.douyin.main.adapter.ViewPagerAdapter;
 import org.alee.util.douyin.preview.PreviewFragment;
+import org.alee.util.douyin.wm.RemoveWatermarkFragment;
 
 import java.util.Objects;
 
@@ -91,8 +92,8 @@ public final class MainFragment extends BaseFragment {
         disableNavigationViewScrollbars(mNavigationView);
         mContainerLayout.setAdapter(mPagerAdapter);
         mPagerAdapter.addItem("预览", new PreviewFragment());
-        mPagerAdapter.addItem("去水印", new PreviewFragment());
-        mPagerAdapter.addItem("BGM", new PreviewFragment());
+        mPagerAdapter.addItem("去水印", new RemoveWatermarkFragment());
+        mPagerAdapter.addItem("BGM", new BackgroundMusicFragment());
         new TabLayoutMediator(mLabelLayout, mContainerLayout, (tab, position) -> tab.setText(mPagerAdapter.getTitle(position))).attach();
     }
 

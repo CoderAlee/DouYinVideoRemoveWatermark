@@ -58,6 +58,9 @@ dependencies {
     implementation rootProject.ext.Tripartite_Library["player_arm64"]
     implementation rootProject.ext.Tripartite_Library["player_x64"]
     implementation rootProject.ext.Tripartite_Library["player_x86"]
+    implementation rootProject.ext.Tripartite_Library["glide"]
+    annotationProcessor rootProject.ext.Tripartite_Library["lombok"]
+    compileOnly rootProject.ext.Tripartite_Library["lombok"]
     implementation files('libs\\annotation-v7-1.15.0.jar')
     implementation(name: 'core-x-1.15.0', ext: 'aar')
     implementation(name: 'Repeated-Click-1.1.0', ext: 'aar')

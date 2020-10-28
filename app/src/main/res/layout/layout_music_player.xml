@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.qmuiteam.qmui.layout.QMUIRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg_music_player">
+
+    <ImageView
+        android:id="@+id/iv_album"
+        android:layout_width="158dp"
+        android:layout_height="158dp"
+        android:layout_centerInParent="true" />
+
+    <org.alee.util.douyin.widget.DimPleView
+        android:id="@+id/dpv_dust"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true" />
+</com.qmuiteam.qmui.layout.QMUIRelativeLayout>

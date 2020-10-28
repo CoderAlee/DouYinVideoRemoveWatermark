@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.alee.util.douyin.widget.player.MusicPlayer xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_music_player"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <org.alee.util.douyin.widget.player.PavedPlayer
+        android:id="@+id/view_player"
+        android:layout_width="1px"
+        android:layout_height="1px"
+        android:background="@color/transparent" />
+</org.alee.util.douyin.widget.player.MusicPlayer>
